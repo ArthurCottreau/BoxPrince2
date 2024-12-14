@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5478f4ecac7294195ba013ab6db4fd, type: 3}
+  m_Name: LevelChunks
+  m_EditorClassIdentifier: 
+  Chunks:
+  - {fileID: 5791567947570166660, guid: 919c17bf1c659d64e9b1238e0f736cd8, type: 3}
+  - {fileID: 3449525309229505102, guid: 88780d57d81702049ba8b3b3de828795, type: 3}
+  - {fileID: 3449525309229505102, guid: ce4b9f0c94bf6da489ec4aff8a119f93, type: 3}
+  - {fileID: 3449525309229505102, guid: a81481f06821b1c47bd0e383271040b9, type: 3}
+  - {fileID: 3449525309229505102, guid: 5ef3fd96f46d57b4c8a685a12b9f9832, type: 3}
+  - {fileID: 3449525309229505102, guid: cf2e9470b271439439423ea464564786, type: 3}
+  - {fileID: 3449525309229505102, guid: 7d5a4c14459a20d499fb41d158a04c9b, type: 3}
+  - {fileID: 3449525309229505102, guid: 2a08adc6e0f2d674a913acd98899a5a7, type: 3}
