@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {                                                           //Déclarations pour la barre d'inventaire
-    public int maxTime;                                         //durée de la barre d'inventaire
+    private int maxTime;                                         //durée de la barre d'inventaire
     public float speedMultiplier;                               //multiplicateur quand main vide
     public Image fill;                                          //référence à l'image de chargement
 
@@ -133,6 +133,19 @@ public class InventoryManager : MonoBehaviour
         sfx = gameObject.GetComponent<AudioSource>();
         GameManager gameMan = GameObject.Find("GameManager").GetComponent<GameManager>();
         sfx.volume = gameMan.sfxVolume / 100 / gameMan.sfxOffset;
+
+        switch (gameMan.difficulty)
+        {
+            case 0:
+                maxTime = 3;
+                break;
+            case 1:
+                maxTime = 4;
+                break;
+            case 2:
+                maxTime = 5;
+                break;
+        }
     }
 
     private void Update()

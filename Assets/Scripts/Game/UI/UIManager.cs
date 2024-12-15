@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     private float score;
     private float height;
     private float maxHeight = 1;
+    private float diff_mult;
 
     // pour obtenir le score ailleurs, pour Game Over par exemple
     public float GetScore()
@@ -33,6 +34,20 @@ public class UIManager : MonoBehaviour
         GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         textRecord.text = "Record : " + gameManager.highScore;
         score = 0;
+
+
+        switch (gameManager.difficulty)
+        {
+            case 0:
+                diff_mult = 0.75f;
+                break;
+            case 1:
+                diff_mult = 1.0f;
+                break;
+            case 2:
+                diff_mult = 1.25f;
+                break;
+        }
     }
 
     void Update()
@@ -45,7 +60,7 @@ public class UIManager : MonoBehaviour
         {
             float diff = height - maxHeight;
             maxHeight = height;
-            score += scoreGain * diff;
+            score += (scoreGain * diff) * diff_mult;
         }
 
         score -= scoreDecrease * Time.deltaTime; // chute du score avec le temps

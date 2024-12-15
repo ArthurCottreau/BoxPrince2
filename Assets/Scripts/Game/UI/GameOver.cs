@@ -42,7 +42,8 @@ public class GameOver : MonoBehaviour
 
         sfx.clip = audioLose;
         sfx.Play();
-        sfx.volume /= 3;
+        AudioSource bgm = GameObject.Find("GameManager").GetComponent<AudioSource>();
+        bgm.volume /= 3;
 
         // Sauvegarde le Score
         scoreManager.newScore(finalScore, finalHeight);

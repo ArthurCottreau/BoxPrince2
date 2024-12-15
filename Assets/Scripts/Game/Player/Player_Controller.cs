@@ -39,7 +39,6 @@ public class Player_Controller : MonoBehaviour
     // Audio
     private AudioSource sfx;
     [SerializeField] private AudioClip audioJump;
-    [SerializeField] private AudioClip audioLose;
 
     void Start()
     {
@@ -179,8 +178,6 @@ public class Player_Controller : MonoBehaviour
     public void Death()
     {
         isDead = true;
-        sfx.clip = audioLose;
-        sfx.Play();
         GameObject.Find("CanvasUI").GetComponent<GameOver>().Death();
     }
 
