@@ -80,6 +80,8 @@ public class GameOver : MonoBehaviour
 
     public void nextScene(int scene)
     {
+        AudioSource bgm = GameObject.Find("GameManager").GetComponent<AudioSource>();
+        bgm.volume *= 3;
         SceneManager.LoadScene(scene);
     }
 }
