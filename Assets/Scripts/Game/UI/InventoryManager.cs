@@ -56,7 +56,7 @@ public class InventoryManager : MonoBehaviour
 
     private void multiply_speed()
     {
-        fill.color = Color.gray;
+        fill.color = Color.red;
         timeSpeed = speedMultiplier;
     }
 
