@@ -26,10 +26,10 @@ public class ScoreManager : MonoBehaviour
         return scoreData; // Récupère la liste de tout les scores
     }
 
-    public void newScore(int newScore, float newHauteur)
+    public void newScore(int newScore, float newHauteur, string newDiff)
     {
         // Ajoute un score à la liste existante
-        scoreData.scoreList.Add(new ElementScore(newScore, newHauteur));
+        scoreData.scoreList.Add(new ElementScore(newScore, newHauteur, newDiff));
 
         // Puis convertis se score pour être sauvegarder dans le ficher .json
         string jsondata = JsonUtility.ToJson(scoreData);

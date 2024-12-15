@@ -130,10 +130,12 @@ public class InventoryManager : MonoBehaviour
         fill.fillAmount = 0;
         InvDisplay();
 
+        // Configure le volume
         sfx = gameObject.GetComponent<AudioSource>();
         GameManager gameMan = GameObject.Find("GameManager").GetComponent<GameManager>();
         sfx.volume = gameMan.sfxVolume / 100 / gameMan.sfxOffset;
 
+        // Configure le temp d'attente pour un nouveau bloque
         switch (gameMan.difficulty)
         {
             case 0:
@@ -144,6 +146,10 @@ public class InventoryManager : MonoBehaviour
                 break;
             case 2:
                 maxTime = 5;
+                break;
+            default:
+                maxTime = 100;
+                Debug.Log("Erreur, la valeur lié à la difficulté est mal configurer !");
                 break;
         }
     }

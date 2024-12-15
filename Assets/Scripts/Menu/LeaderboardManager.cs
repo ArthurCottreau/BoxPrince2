@@ -26,6 +26,7 @@ public class LeaderboardManager : MonoBehaviour
                 GameObject inst = Instantiate(prefab, content.transform.position, Quaternion.identity, content.transform);
                 inst.transform.Find("TextScore").GetComponent<TextMeshProUGUI>().text = "Score : " + data.scoreList[i].scoreJoueur;
                 inst.transform.Find("TextHeight").GetComponent<TextMeshProUGUI>().text = "Hauteur : " + data.scoreList[i].hauteurJoueur.ToString("0.00") + "m";
+                inst.transform.Find("TextDifficulty").GetComponent<TextMeshProUGUI>().text = "Difficulté : " + data.scoreList[i].diffJoueur;
             }
         }
 

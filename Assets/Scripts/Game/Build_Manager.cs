@@ -28,6 +28,7 @@ public class Build_Manager : MonoBehaviour
         inv_manag = gameObject.GetComponent<InventoryManager>();
         poly_col = gameObject.GetComponent<PolygonCollider2D>();
 
+        // Configure le volume
         sfx = gameObject.GetComponent<AudioSource>();
         GameManager gameMan = GameObject.Find("GameManager").GetComponent<GameManager>();
         sfx.volume = gameMan.sfxVolume / 100 / gameMan.sfxOffset;

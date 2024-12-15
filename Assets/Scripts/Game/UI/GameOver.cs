@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using static UnityEngine.GraphicsBuffer;
 
 public class GameOver : MonoBehaviour
 {
@@ -20,12 +15,12 @@ public class GameOver : MonoBehaviour
 
     // Audio
     private AudioSource sfx;
-    [SerializeField] private AudioClip audioLose;
 
     private void Start()
     {
         scoreManager = GameObject.Find("GameManager").GetComponent<ScoreManager>();
 
+        // Configure le volume
         sfx = gameObject.GetComponent<AudioSource>();
         GameManager gameMan = GameObject.Find("GameManager").GetComponent<GameManager>();
         sfx.volume = gameMan.sfxVolume / 100 / gameMan.sfxOffset;
@@ -40,13 +35,32 @@ public class GameOver : MonoBehaviour
         display_height.text = "Hauteur : " + finalHeight.ToString("0.00") + "m";
         goui.SetActive(true);
 
-        sfx.clip = audioLose;
-        sfx.Play();
+        sfx.Play(); // Joue le son de mort
         AudioSource bgm = GameObject.Find("GameManager").GetComponent<AudioSource>();
-        bgm.volume /= 3;
+        bgm.volume /= 3;    // Réduit le son de la musique
+
+        // Récupère la difficulter, pour le sauvegarder en string
+        GameManager gameMan = GameObject.Find("GameManager").GetComponent<GameManager>();
+        string difficulty = "";
+        switch (gameMan.difficulty)
+        {
+            case 0:
+                difficulty = "Facile";
+                break;
+            case 1:
+                difficulty = "Normale";
+                break;
+            case 2:
+                difficulty = "Difficile";
+                break;
+            default:
+                difficulty = "Euh...";
+                Debug.Log("Erreur, la valeur lié à la difficulté est mal configurer !");
+                break;
+        }
 
         // Sauvegarde le Score
-        scoreManager.newScore(finalScore, finalHeight);
+        scoreManager.newScore(finalScore, finalHeight, difficulty);
 
         // Met à jour le highscore dans le GameManager
         manager.update_hscore(finalScore);

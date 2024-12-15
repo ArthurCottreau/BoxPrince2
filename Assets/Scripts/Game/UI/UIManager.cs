@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -35,7 +31,7 @@ public class UIManager : MonoBehaviour
         textRecord.text = "Record : " + gameManager.highScore;
         score = 0;
 
-
+        // Configure le multiplicateur de score
         switch (gameManager.difficulty)
         {
             case 0:
@@ -46,6 +42,10 @@ public class UIManager : MonoBehaviour
                 break;
             case 2:
                 diff_mult = 1.25f;
+                break;
+            default:
+                diff_mult = 0;
+                Debug.Log("Erreur, la valeur lié à la difficulté est mal configurer !");
                 break;
         }
     }

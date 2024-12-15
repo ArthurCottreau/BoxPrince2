@@ -2608,7 +2608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6238c4d1f574eb74c84ddf122f87a00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 4
   speedMultiplier: 2.5
   fill: {fileID: 2122328369}
   inv_slots:
@@ -3963,7 +3962,6 @@ MonoBehaviour:
   canMove: 1
   isDead: 0
   audioJump: {fileID: 8300000, guid: 3174a3df8e1326a46a37fe218331920d, type: 3}
-  audioLose: {fileID: 8300000, guid: 0fa822ab408e7b445829a1b43bfd3c46, type: 3}
 --- !u!95 &910068741
 Animator:
   serializedVersion: 5
@@ -5152,8 +5150,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 4d6b2667defc8304c81458940e32f95a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
